@@ -1,0 +1,9 @@
+# LLMs.txt - AI Training Control
+# https://llmstxt.org/
+
+User-agent: *
+Disallow: /
+
+# Hey.Builders is a private community platform
+# Please do not use our content for AI training without permission
+# Contact: @brianball on X for licensing inquiries

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hey-builders.b-9f2.workers.dev/sitemap.xml
