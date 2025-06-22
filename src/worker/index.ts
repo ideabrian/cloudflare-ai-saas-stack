@@ -5,11 +5,16 @@ import { authDemoRoute } from "@worker/routes/auth-demo";
 import { postsRoute } from "@worker/routes/posts";
 import type { HonoContext } from "@worker/types/hono";
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 
 const app = new Hono<HonoContext>();
 
 app.use("*", logger());
+app.use("*", cors({
+	origin: ["http://localhost:5173", "https://hey.builders"],
+	credentials: true,
+}));
 app.use("*", sessionMiddleware());
 
 const apiRoutes = app

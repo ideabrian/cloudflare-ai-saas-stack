@@ -5,25 +5,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 **Package Management:**
-- Always use `bun` to install packages and run the app
+- Always use `npm` to install packages and run the app
 
 **Primary Development:**
-- `bun run dev` - Start development server with hot reload (React + Hono API)
-- `bun run build` - Build for production
-- `bun run deploy` - Build and deploy to Cloudflare Workers
+- `npm run dev` - Start development server with hot reload (React + Hono API)
+- `npm run build` - Build for production
+- `npm run deploy` - Build and deploy to Cloudflare Workers
 
 **Code Quality:**
-- `bun run lint` - Lint and auto-fix with Biome
-- `bun run check` - Full type check and dry-run deploy
+- `npm run lint` - Lint and auto-fix with Biome
+- `npm run check` - Full type check and dry-run deploy
 
 **Database:**
-- `bun run db:generate` - Generate migrations from schema changes
-- `bun run db:migrate` - Apply migrations locally
-- `bun run db:migrate:remote` - Apply migrations to Cloudflare D1
-- `bun run db:studio` - Open Drizzle Studio
+- `npm run db:generate` - Generate migrations from schema changes
+- `npm run db:migrate` - Apply migrations locally
+- `npm run db:migrate:remote` - Apply migrations to Cloudflare D1
+- `npm run db:studio` - Open Drizzle Studio
 
 **Type Generation:**
-- `bun run cf-typegen` - Generate Cloudflare Worker types
+- `npm run cf-typegen` - Generate Cloudflare Worker types
 
 ## Architecture Overview
 

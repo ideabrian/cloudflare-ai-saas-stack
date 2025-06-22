@@ -63,14 +63,14 @@
     "build": "tsc -b && vite build",
     "cf-typegen": "wrangler types",
     "check": "tsc && vite build && wrangler deploy --dry-run",
-    "deploy": "bun run build && wrangler deploy",
+    "deploy": "npm run build && wrangler deploy",
     "dev": "vite",
     "lint": "biome lint --write src",
-    "preview": "bun run build && vite preview",
-    "db:generate": "bun drizzle-kit generate",
-    "db:studio": "bun drizzle-kit studio",
-    "db:migrate": "bunx wrangler d1 migrations apply cloudflare-ai-saas-stack --local",
-    "db:migrate:remote": "bunx wrangler d1 migrations apply cloudflare-ai-saas-stack --remote"
+    "preview": "npm run build && vite preview",
+    "db:generate": "npx drizzle-kit generate",
+    "db:studio": "npx drizzle-kit studio",
+    "db:migrate": "npx wrangler d1 migrations apply cloudflare-ai-saas-stack --local",
+    "db:migrate:remote": "npx wrangler d1 migrations apply cloudflare-ai-saas-stack --remote"
   },
   "type": "module"
 }

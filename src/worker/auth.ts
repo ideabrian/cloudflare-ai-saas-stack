@@ -5,6 +5,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 
 export const auth = (env: Env) => {
 	return betterAuth({
+		secret: env.BETTER_AUTH_SECRET,
 		database: drizzleAdapter(db(env), {
 			provider: "sqlite",
 			schema: {
@@ -30,7 +31,7 @@ export const auth = (env: Env) => {
 			sameSite: "lax",
 		},
 		emailAndPassword: {
-			enabled: false,
+			enabled: true,
 		},
 		socialProviders: {
 			google: {
