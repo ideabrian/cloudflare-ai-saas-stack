@@ -12,6 +12,17 @@ import { logger } from "hono/logger";
 const app = new Hono<HonoContext>();
 
 app.use("*", logger());
+
+// WWW redirect middleware
+app.use("*", async (c, next) => {
+	const url = new URL(c.req.url);
+	if (url.hostname.startsWith("www.")) {
+		const newUrl = url.toString().replace("www.", "");
+		return c.redirect(newUrl, 301);
+	}
+	await next();
+});
+
 app.use("*", cors({
 	origin: ["http://localhost:5173", "https://hey.builders"],
 	credentials: true,
