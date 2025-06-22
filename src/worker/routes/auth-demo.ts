@@ -5,7 +5,7 @@ import { Hono } from "hono";
 export const authDemoRoute = new Hono<HonoContext>()
 	// Public route - no authentication required
 	.get("/public", async (c) => {
-		return c.json({ message: "This is a public endpoint" });
+		return c.json({ message: "This is a public Hey.Builders endpoint" });
 	})
 
 	// Optional authentication - shows different content based on auth status
@@ -15,7 +15,7 @@ export const authDemoRoute = new Hono<HonoContext>()
 
 		if (user && session) {
 			return c.json({
-				message: "Hello authenticated user!",
+				message: "Welcome to Hey.Builders!",
 				user: user.email,
 				sessionId: session.id,
 			});

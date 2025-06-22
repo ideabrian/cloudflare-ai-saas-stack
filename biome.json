@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["./src/client/routeTree.gen.ts"]
+		"ignore": ["./src/client/routeTree.gen.ts", "./src/client/routes/**/$*.tsx"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -34,7 +34,8 @@
 					"level": "error",
 					"options": {
 						"strictCase": true,
-						"filenameCases": ["kebab-case"]
+						"filenameCases": ["kebab-case"],
+						"requireAscii": false
 					}
 				}
 			}

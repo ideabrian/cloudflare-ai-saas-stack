@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "cloudflare-ai-saas-stack",
+	"name": "hey-builders",
 	"main": "./src/worker/index.ts",
 	"compatibility_date": "2025-04-01",
 	"compatibility_flags": ["nodejs_compat"],
@@ -21,8 +21,8 @@
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "cloudflare-ai-saas-stack",
-			"database_id": "f31d3908-8f25-46c8-95ac-e95845705ff5",
+			"database_name": "hey-builders",
+			"database_id": "e844adca-7c35-46a6-aa01-300b8beaa77b",
 			"migrations_dir": "src/worker/db/migrations"
 		}
 	],

@@ -1,9 +1,9 @@
 {
-  "name": "vite-react-template",
-  "description": "A template for building a React application with Vite, Hono, and Cloudflare Workers",
+  "name": "hey-builders",
+  "description": "Hey.Builders - A lightweight, high-trust onboarding funnel for serious builders",
   "version": "0.0.0",
   "cloudflare": {
-    "label": "Vite React Template",
+    "label": "Hey.Builders",
     "products": [
       "Workers"
     ],
@@ -69,8 +69,8 @@
     "preview": "npm run build && vite preview",
     "db:generate": "npx drizzle-kit generate",
     "db:studio": "npx drizzle-kit studio",
-    "db:migrate": "npx wrangler d1 migrations apply cloudflare-ai-saas-stack --local",
-    "db:migrate:remote": "npx wrangler d1 migrations apply cloudflare-ai-saas-stack --remote"
+    "db:migrate": "npx wrangler d1 migrations apply hey-builders --local",
+    "db:migrate:remote": "npx wrangler d1 migrations apply hey-builders --remote"
   },
   "type": "module"
 }

@@ -76,7 +76,7 @@ export function LoginForm({
 						Welcome Back
 					</CardTitle>
 					<CardDescription className="text-sm text-muted-foreground">
-						Sign in with your Google account to continue.
+						Sign in to join the Hey.Builders community.
 					</CardDescription>
 				</CardHeader>
 				<CardContent className="p-6 pt-0">

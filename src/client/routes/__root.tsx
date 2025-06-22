@@ -86,7 +86,7 @@ function NavBar() {
 					to="/"
 					className="text-lg font-medium text-foreground/80 hover:text-foreground [&.active]:text-primary [&.active]:font-semibold"
 				>
-					MyApp
+					Hey.Builders
 				</Link>{" "}
 				{!isPending && sessionData && user ? (
 					<>

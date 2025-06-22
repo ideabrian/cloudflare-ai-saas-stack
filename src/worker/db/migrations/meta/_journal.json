@@ -8,6 +8,13 @@
       "when": 1749594814334,
       "tag": "0000_orange_medusa",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1750611171176,
+      "tag": "0001_friendly_tombstone",
+      "breakpoints": true
     }
   ]
 }
