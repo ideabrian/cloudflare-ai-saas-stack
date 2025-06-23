@@ -122,3 +122,25 @@ Email/password auth may fail with `503 cpuExceeded` error on Cloudflare free pla
 3. **File-based routing** - Both API routes and frontend routes
 4. **Middleware pattern** - Hono middleware for cross-cutting concerns
 5. **Schema-first validation** - Zod schemas shared between layers
+
+## Pending Features - Builder Commitment System
+
+Based on the mockup provided, we need to implement:
+
+### Builder Commitments Page
+- **Checkbox System**: 5 predefined commitments worth $5 each
+  - "I'll show up weekly to build something ($5)"
+  - "I'll give feedback when asked ($5)"
+  - "I'll record a call with someone new ($5)"
+  - "I'll nominate a builder I trust ($5)"
+  - "I'll help another builder get unstuck ($5)"
+- **Custom Input**: "Add your own" text field for custom commitments
+- **Value Tracking**: Sum total intent value as user selects items
+- **Unlock Threshold**: When total reaches $20+, unlock private join link
+- **Success State**: "Great! We'll now generate a private link to join. Check your inbox or DMs soon."
+
+### Technical Implementation
+- Add to existing funnel after copy reveal step
+- Store commitment selections in database
+- Generate unique private links for qualified users
+- Email/DM notification system for sending links

@@ -72,15 +72,40 @@ The question isn't whether you can afford to join. It's whether you can afford n
 			} else {
 				const fullText = `${selectedHeadline}. ${salesLetter}`;
 				const utterance = new SpeechSynthesisUtterance(fullText);
-				utterance.rate = 0.9;
-				utterance.pitch = 1;
-				utterance.volume = 0.8;
 				
-				utterance.onend = () => setIsPlaying(false);
-				utterance.onerror = () => setIsPlaying(false);
+				const setupVoiceAndSpeak = () => {
+					// Get available voices and prefer better quality ones
+					const voices = speechSynthesis.getVoices();
+					const preferredVoices = voices.filter(voice => 
+						voice.name.includes('Samantha') || 
+						voice.name.includes('Alex') ||
+						voice.name.includes('Daniel') ||
+						voice.name.includes('Karen') ||
+						voice.name.includes('Moira') ||
+						voice.lang.includes('en-US')
+					);
+					
+					if (preferredVoices.length > 0) {
+						utterance.voice = preferredVoices[0];
+					}
+					
+					utterance.rate = 0.85;
+					utterance.pitch = 0.95;
+					utterance.volume = 0.9;
+					
+					utterance.onend = () => setIsPlaying(false);
+					utterance.onerror = () => setIsPlaying(false);
+					
+					speechSynthesis.speak(utterance);
+					setIsPlaying(true);
+				};
 				
-				speechSynthesis.speak(utterance);
-				setIsPlaying(true);
+				// Voices might not be loaded yet
+				if (speechSynthesis.getVoices().length === 0) {
+					speechSynthesis.addEventListener('voiceschanged', setupVoiceAndSpeak, { once: true });
+				} else {
+					setupVoiceAndSpeak();
+				}
 			}
 		}
 	};
